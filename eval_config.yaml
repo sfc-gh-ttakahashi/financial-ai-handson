@@ -1,0 +1,25 @@
+# データセットの登録
+dataset:
+  dataset_type: "CORTEX AGENT"
+  table_name: "FINANCIAL_AI_HANDSON.ANALYTICS.AGENT_EVAL_DATASET"
+  dataset_name: "FINANCIAL_EVAL_DS"
+  column_mapping:
+    query_text: "INPUT_QUERY"
+    ground_truth: "GROUND_TRUTH"
+
+# エージェント評価の設定
+evaluation:
+  agent_params:
+    agent_name: "FINANCIAL_AI_HANDSON.ANALYTICS.BANKING_AGENT"
+    agent_type: "CORTEX AGENT"
+  run_params:
+    label: "banking_baseline"
+    description: "Banking agent baseline evaluation"
+  source_metadata:
+    type: "dataset"
+    dataset_name: "FINANCIAL_EVAL_DS"
+
+# 評価メトリクス（トップレベルキー）
+metrics:
+  - "answer_correctness"
+  - "logical_consistency"
