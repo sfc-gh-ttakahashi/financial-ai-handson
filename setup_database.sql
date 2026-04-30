@@ -11,9 +11,10 @@
 USE ROLE ACCOUNTADMIN;
 
 -- ============================================================
--- STEP 1: クロスリージョン推論を有効化
+-- STEP 1: クロスリージョン推論の有効化、Snowflake Intelligence のオブジェクト作成
 -- ============================================================
 ALTER ACCOUNT SET CORTEX_ENABLED_CROSS_REGION = 'ANY_REGION';
+CREATE OR REPLACE SNOWFLAKE INTELLIGENCE SNOWFLAKE_INTELLIGENCE_OBJECT_DEFAULT;
 
 -- ============================================================
 -- STEP 2: ウェアハウスの作成（全ユーザー共有）
